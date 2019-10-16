@@ -30,7 +30,9 @@ Start the tpp-reverse proxy, before you do this you need:
 * replace the command line arguments below.
 
 Run these commands in the shell:
+
     $ npm install
+>
     $ npm start publicKey={INSERT_PATH_TO_CERT} privateKey={INSERT_PATH_TO_PRIVATE_KEY} host=https://somesite.openbanking.com
 
 
@@ -39,14 +41,16 @@ Modify scripts\init_01078900497_private.sh like this:
 * replace all instances of __INSERT_X_REQUEST_ID__ with unique ids.
 
 Make sure the script files have execute rights on your computer:
+
     $ chmod u+x scripts/*
 
 Run the script to create a user in the sandbox environment:
+
     $ scripts\init_01078900497_private.sh
 
 You should see some json returned, we recommend checking the mock data api documentation to understand the output.
 
-### Optional: add transactions to an
+### Optional: add transactions to an account
 
 Modify scripts\init_transactions_for_a_single_account.sh like this:
 * replace all instances of __INSERT_X_REQUEST_ID__ with unique ids.
@@ -55,6 +59,7 @@ Modify scripts\init_transactions_for_a_single_account.sh like this:
 * replace all instances of __INSERT_ACCOUNT_ID__ with the id that was returned in the json for the account with BBAN=90412263056 and IBAN=NO2390412263056
 
 Run the script to create transactions:
+
     $ scripts\init_transactions_for_a_single_account.sh
 
 ### Done
