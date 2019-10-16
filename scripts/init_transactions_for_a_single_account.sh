@@ -1,0 +1,10 @@
+curl --request POST \
+  --url 'http://127.0.0.1:8731/api-sandbox/v1/sandbox/accounts/__INSERT_ACCOUNT_ID__/transactions' \
+  --header 'accept: application/json' \
+  --header 'accept-charset: utf-8' \
+  --header 'accept-encoding: deflate, gzip;q=1.0, *;q=0.5' \
+  --header 'accept-language: en-US,en;q=0.7,nb;q=0.3' \
+  --header 'Content-Type: application/json; charset=UTF-8' \
+  --header 'host: localhost' \
+  --header 'x-request-id: __INSERT_X_REQUEST_ID__' \
+  --data '[{"amount":1500,"currency":"NOK","valueDate":"2019-05-12","bookingDate":"2019-05-12","remittanceInformationUnstructured":"63444766","creditorId":"1","creditorName":"Aftenposten","creditorAccount":{"iban":"__INSERT_IBAN__","bban":"__INSERT_BBAN__"},"ultimateCreditor":"Test","debtorName":"Testperson 2","debtorAccount":{"iban":"NO6290491105991","bban":"90491105991"},"ultimateDebtor":"test","purposeCode":"code","bankTransactionCode":"PMNT"},{"amount":1500,"currency":"NOK","valueDate":"2019-05-13","bookingDate":"2019-05-13","remittanceInformationUnstructured":"1476074371486","creditorId":"2","creditorName":"Sognekraft","creditorAccount":{"iban":"__INSERT_IBAN__","bban":"__INSERT_BBAN__"},"ultimateCreditor":"Sognekraft","debtorName":"Testperson","debtorAccount":{"iban":"NO6290491105991","bban":"90491105991"},"ultimateDebtor":"Testperson","purposeCode":"code","bankTransactionCode":"PMNT"},{"amount":123,"currency":"NOK","valueDate":"2019-05-13","bookingDate":"2019-05-13","remittanceInformationUnstructured":"1476074371486","creditorId":"2","creditorName":"Testperson To","creditorAccount":{"iban":"__INSERT_IBAN__","bban":"__INSERT_BBAN__"},"ultimateCreditor":"Testperson To","debtorName":"Testperson From","debtorAccount":{"iban":"NO6290491105991","bban":"90491105991"},"ultimateDebtor":"Testperson From","purposeCode":"code","bankTransactionCode":"PMNT"}]'
