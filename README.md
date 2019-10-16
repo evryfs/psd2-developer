@@ -1,3 +1,5 @@
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=evryfs/psd2-developer)](https://dependabot.com)
+
 # PSD2 Developer Helper Tool
 The helper tool consists of 2 parts:
 
