@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:10-buster
 
 RUN mkdir /usr/src/tpp-reverse-proxy
 WORKDIR /usr/src/tpp-reverse-proxy
