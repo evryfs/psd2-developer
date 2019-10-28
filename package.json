@@ -19,7 +19,7 @@
     "name": "Rune Vikestad",
     "email": "rune.vikestad@evry.com"
   },
-  "license": "ASL2",
+  "license": "Apache-2.0",
   "keywords": [
     "signature",
     "http message signing",
