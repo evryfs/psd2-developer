@@ -18,6 +18,7 @@ jobs:
       #  with:
       #    args: run lint
       - name: docker build and push
+        if: github.ref == 'master'
         uses: jerray/publish-docker-action@v1.0.3
         with:
           registry: docker.pkg.github.com
