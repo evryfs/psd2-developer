@@ -1,8 +1,6 @@
 on: push
-name: npm build, lint, test and publish
 jobs:
-  build-and-publish:
-    name: build and publish
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,8 +15,12 @@ jobs:
       #  uses: actions/npm@master
       #  with:
       #    args: run lint
+  docker-image:
+    runs-on: ubuntu-latest
+    if: github.ref == 'master'
+    needs: build-and-test
+    steps:
       - name: docker build and push
-        if: github.ref == 'master'
         uses: jerray/publish-docker-action@v1.0.3
         with:
           registry: docker.pkg.github.com
