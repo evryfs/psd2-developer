@@ -33,10 +33,10 @@
     "@babel/preset-env": "^7.0.0-beta.54",
     "@babel/preset-stage-3": "^7.0.0-beta.54",
     "babel-eslint": "^10.0.3",
-    "eslint": "^5.2.0",
+    "eslint": "^6.6.0",
     "eslint-plugin-import": "^2.13.0",
     "nodemon": "^1.18.3",
-    "rimraf": "^2.6.2",
+    "rimraf": "^3.0.0",
     "shelljs": "^0.8.2"
   },
   "dependencies": {
