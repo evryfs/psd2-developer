@@ -17,7 +17,7 @@ jobs:
       #    args: run lint
   docker-image:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/head/master'
+    if: github.ref == 'refs/heads/master'
     needs: build-and-test
     steps:
       - name: docker build and push
