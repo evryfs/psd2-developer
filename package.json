@@ -9,15 +9,15 @@
     "start": "npm run build && npm run serve",
     "serve": "node dist/index.js",
     "watch": "nodemon -w src --exec \"babel src -s -D -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/testscript.js",
+    "ci": "server-test 'npm start publicKey=cert  privateKey=key host=${HOST}' 8731 test"
   },
   "repository": {
     "type": "git",
-    "url": "https://fsstash.evry.com/scm/customer_smbera/tpp-reverse-proxy.git"
+    "url": "https://github.com/evryfs/psd2-developer.git"
   },
   "author": {
-    "name": "Rune Vikestad",
-    "email": "rune.vikestad@evry.com"
+    "name": "Rune Vikestad"
   },
   "license": "Apache-2.0",
   "keywords": [
@@ -36,6 +36,7 @@
     "eslint": "^6.6.0",
     "eslint-plugin-import": "^2.13.0",
     "nodemon": "^1.18.3",
+    "start-server-and-test": "^1.10.6",
     "rimraf": "^3.0.0",
     "shelljs": "^0.8.2"
   },
