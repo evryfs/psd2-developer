@@ -35,7 +35,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.6.0",
     "eslint-plugin-import": "^2.13.0",
-    "nodemon": "^1.18.3",
+    "nodemon": "^2.0.0",
     "start-server-and-test": "^1.10.6",
     "rimraf": "^3.0.0",
     "shelljs": "^0.8.2"
