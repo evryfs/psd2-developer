@@ -56,7 +56,7 @@
     "lodash": "^4.17.10",
     "pem": "^1.12.5",
     "request": "^2.88.0",
-    "rotating-file-stream": "^1.3.7",
+    "rotating-file-stream": "^2.0.0",
     "uuid": "^3.3.2"
   }
 }
