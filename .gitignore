@@ -6,3 +6,7 @@ dist/
 
 # Logs
 logs/
+
+#CI
+cert
+key
