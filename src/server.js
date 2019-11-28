@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import Koa from 'koa';
-import rfs from 'rotating-file-stream';
+const rfs = require("rotating-file-stream");
 import middleware from './middleware';
 import configuration from './configuration';
 import bunyan from 'bunyan';
@@ -32,7 +32,7 @@ var logDirectory = path.join(__dirname, 'logs')
 
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory)
 
-var accessLogStream = rfs('access.log', {
+var accessLogStream = rfs.createStream('access.log', {
     interval: '1d', // rotate daily
     path: logDirectory
 });
