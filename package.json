@@ -48,7 +48,7 @@
     "koa-bodyparser": "^4.2.1",
     "koa-bunyan-logger": "^2.0.0",
     "koa-compose": "^4.1.0",
-    "koa-compress": "^3.0.0",
+    "koa-compress": "^4.0.0",
     "koa-convert": "^1.2.0",
     "koa-cors": "0.0.16",
     "koa-proxy": "^0.9.0",
