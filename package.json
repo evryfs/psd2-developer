@@ -33,7 +33,7 @@
     "@babel/preset-env": "^7.0.0-beta.54",
     "@babel/preset-stage-3": "^7.0.0-beta.54",
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.6.0",
+    "eslint": "^7.3.1",
     "eslint-plugin-import": "^2.13.0",
     "nodemon": "^2.0.0",
     "start-server-and-test": "^1.10.6",
