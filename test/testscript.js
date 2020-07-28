@@ -3,18 +3,20 @@ const exec = require('child_process').exec
 
 baseUrl = 'http://127.0.0.1:8731/api-sandbox/v1/sandbox'
 
-headers = {
-    'accept': 'application/json', 
-    'accept-charset': 'utf-8', 
-    'accept-encoding': 'deflate, gzip;q=1.0, *;q=0.5', 
-    'accept-language': 'en-US,en;q=0.7,nb;q=0.3', 
-    'Content-Type': 'application/json; charset=UTF-8', 
-    'host': 'localhost', 
-    'x-request-id':'TEST_SCRIPT_REQUEST_ID'
+function headers() {
+    return {
+        'accept': 'application/json', 
+        'accept-charset': 'utf-8', 
+        'accept-encoding': 'deflate, gzip;q=1.0, *;q=0.5', 
+        'accept-language': 'en-US,en;q=0.7,nb;q=0.3', 
+        'Content-Type': 'application/json; charset=UTF-8', 
+        'host': 'localhost', 
+        'x-request-id':'TEST_SCRIPT_REQUEST_ID_' + Math.floor(Math.random()*1000000)
+    }
 }
 
 console.log("Cleaning")
-deleteExisting(baseUrl, headers, () => {
+deleteExisting(baseUrl, () => {
     console.log("Done cleaning up, running script")
 
     exec('sh scripts/init_01078900497_private.sh',
@@ -39,10 +41,10 @@ deleteExisting(baseUrl, headers, () => {
 })
 
 
-  function deleteExisting(baseUrl,headers, callback) {
+  function deleteExisting(baseUrl, callback) {
     options = {
         uri: baseUrl+ '/customers',
-        headers: headers
+        headers: headers()
     }
     
     request(
@@ -54,11 +56,11 @@ deleteExisting(baseUrl, headers, () => {
                     return customer.customerId
                 } )
 
-                deleteCustomers(baseUrl, headers, ids, callback)
+                deleteCustomers(baseUrl, ids, callback)
       }))
   }
 
-  function deleteCustomers(baseUrl, headers, ids, callback) {
+  function deleteCustomers(baseUrl, ids, callback) {
 
     if(ids.length > 0) {
         var id = ids[0];
@@ -67,14 +69,14 @@ deleteExisting(baseUrl, headers, () => {
         options = {
             uri: baseUrl+ '/customers/'+id,
             method: 'DELETE',
-            headers: headers
+            headers: headers()
         }
 
         request(
             options,
             handleError(function (body) {
                 console.log("deleted id: " + id)
-                deleteCustomers(baseUrl, headers, next, callback)
+                deleteCustomers(baseUrl, next, callback)
         }))
     }
     else {
@@ -95,6 +97,7 @@ deleteExisting(baseUrl, headers, () => {
             process.exit(1)
         }
         else {
+            console.log("response: " + body  + "\n")
             callback(body)
         }
     }
